@@ -1,0 +1,883 @@
+<section class="cd-horizontal-timeline" [ngClass]="{'loaded': loaded}">
+
+  <div class="events-content" *ngIf="showContent" [style.width.px]="_timelineWrapperWidth">
+    <ol class="mb-0">
+      <li *ngFor="let item of timelineElements; let index = index"
+        [@contentState]="item.selected ? 'active' : (index < selectedIndex ? 'left' : 'right')">
+        <div class="timeline-live-items" *ngIf="item.selected">
+          <div class="timeline-live-item" *ngFor="let liveItem of item.livedata">
+            <div *ngIf="liveItem.url">
+              
+              <!-- <div class="modal-content"  > -->
+                
+                <!-- <div class="modal-header" style="padding:1px;"> -->
+                  <!-- <i class="icon icon-close" (click)="close(modal)"></i> -->
+                  <!-- <button type="button" #closebutton class="close" data-dismiss="modal" (click)="onSave()"></button> -->
+                  <!-- </div> -->
+              <!-- <iframe [src]="liveItem.url | safe" allowfullscreen width="560px" height="315px"></iframe> -->
+              <!-- <iframe [src]="liveItem.url | safe" allowfullscreen width="560px" height="315px"></iframe> -->
+
+              <!-- </div> -->
+              
+                  
+              <!-- <p>{{liveItem.id}} </p> -->
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </div>
+  <button id="report" (click)="download()">  Report <i class="icon icon-log-in"></i></button>
+  <button id="player2" (click)="openSm2(videocontent2)" style="outline: none;">  player2 <i class="icon icon-log-in"></i></button>
+
+  <ng-template #videocontent let-modal style="">
+      <div class="left" style="position: fixed;left: 74%;background-color:white;border-radius: 0px;">
+      <div class="modal-header" style="padding:5px;">
+        <h6 class="modal-title" style="text-align:center;">     Ended Stream</h6>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" style="outline:none;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <tabset>
+        <tab heading="Day Surveilance">
+      <div class="modal-body" style="max-width: 280px; max-height:340px; 
+      overflow-y: auto;" >
+        
+           <button style=" width:216px;margin:5px; background-color:#949697;
+            border: 1px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+            color: white;" (click)="openLg0(playercontent0)">Drone Test Flights</button>
+          
+          <br>
+            <button style=" width:216px;margin:5px; background-color:#949697;
+            border: 1px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+            color: white;" (click)="openLg(playercontent)">Drone Patrolling for Fire Detection</button>
+          
+          <br>
+          
+          <button style="width:216px; margin:5px; background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg2(playercontent2)">Drone Patrolling for Fire Detection(Controller Footage)</button>
+        
+          
+          <br>
+          
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg3(playercontent3)">Drone Fire Incident Detection and Monitoring (Controller Footage)</button>
+        
+          
+          <br>
+          
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg4(playercontent4)">Drone Fire Incident Detection and Monitoring</button>
+        
+            <br>
+            <button style="width:216px;margin:5px;background-color:#949697;
+            border: 1px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+            color: white;" (click)="openLg5(playercontent5)">Beeah Company Vehicle Tracking (Controller Footage)</button>
+          
+          <br> <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg6(playercontent6)">Beeah Company Vehicle Tracking</button>
+        
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+            border: 1px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+            color: white;" (click)="openLg7(playercontent7)">Beeah Employee Tracking (Controller Footage)</button>
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+            border: 1px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+            color: white;" (click)="openLg8(playercontent8)">Beeah Employee Tracking</button>
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+            border: 1px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+            color: white;" (click)="openLg9(playercontent9)">Construction Site Monitoring</button>
+          <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg10(playercontent10)">Non Company Vehicle Tracking with Plate No Identification</button>
+        
+        <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg11(playercontent11)">Non Company Vehicle Tracking with Plate No Identification</button>
+          <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg12(playercontent12)">Visual Security Surveillance of Wood Storage Area</button>
+          <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg13(playercontent13)">Thermal Security Surveillance of Wood Storage Area....</button>
+          <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg14(playercontent14)">Drone Surveilance of Hazardous Area (Controller Footage)</button>
+          <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg15(playercontent15)">Drone Surveillance of Hazardous Area</button>
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+        border: 1px;
+        padding: 10px;
+        box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+        color: white;" (click)="openLg16(playercontent16)">Drone Surveillance of Borders</button>
+      <br>
+      <!-- <button style="width:216px;margin:5px;background-color:#949697;
+      border: 1px;
+      padding: 10px;
+      box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+      color: white;" (click)="openLg17(playercontent17)">10. Drone Surveillance of Chemical Waste (Controller Footage)</button>
+        <br> -->
+        <button style="width:216px;margin:5px;background-color:#949697;
+        border: 1px;
+        padding: 10px;
+        box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+        color: white;" (click)="openLg18(playercontent18)">Drone Surveillance of Chemical Waste</button>
+        <br>
+        </div>
+    </tab>
+       </tabset>
+       </div>
+      </ng-template>
+       <ng-template #playercontent0 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Test Flights</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/0.+Drone+Test+Flights.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent39 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Automated Flight Path</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/10.+Automated+Flight+Path.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent38 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Automated Flight Night</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/10.+Automated+Flight+Night.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent37 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Security Surveillance of Borders</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/9.+Drone+Security+Surveillance+of+Borders.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent36 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Security Surveillance of Borders (Controller Footage)</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/9.+Drone+Security+Surveillance+of+Borders+(Controller+Footage).mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent35 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Security Surveillance of Chemical Waste Area</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/8.+Drone+Security+Surveillance+of+Chemical+Waste+Area.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent34 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Security Surveillance of Chemical Waste Area (Controller Footage)</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/8.+Drone+Security+Surveillance+of+Chemical+Waste+Area+(Controller+Footage).mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent33 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Security Surveillance of Wood Storage Area</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/7.+Drone+Security+Surveillance+of+Wood+Storage+Area.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent32 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Security Surveillance of Wood Storage Area (Controller Footage)</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/7.+Drone+Security+Surveillance+of+Wood+Storage+Area+(Controller+Footage).mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent31 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Live Monitoring of Tarmac Area</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/6.+Drone+Live+Monitoring+of+Tarmac+Area.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent30 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Live Monitoring of Company Vehicle</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/4.+Drone+Live+Monitoring+of+Company+Vehicle.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent29 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Live Monitoring of Company Vehicle (Controller Footage)</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/4.+Drone+Live+Monitoring+of+Company+Vehicle+(Controller+Footage).mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent28 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Patrolling and Detection of Suspicious Person & Vehicle</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/3.+Drone+Patrolling+and+Detection+of+Suspicious+Person+%26+Vehicle.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent27 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Patrolling and Detection of Suspicious Person & Vehicle (Controller Footage)</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/3.+Drone+Patrolling+and+Detection+of+Suspicious+Person+%26+Vehicle+(Controller+Footage).mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent26 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Patrolling and Detection of Suspicious Vehicle</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/2.+Drone+Patrolling+and+Detection+of+Suspicious+Vehicle.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent25 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Patrolling and Detection of Suspicious Vehicle (Controller Footage 1)</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/2.+Drone+Patrolling+and+Detection+of+Suspicious+Vehicle+(Controller+Footage+1).mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent24 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Patrolling, Detection of Suspicious Person and Tracking of Illegal Vehicle</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/1.1+Drone+Patrolling%2C+Detection+of+Suspicious+Person+and+Tracking+of+Illegal+Vehicle.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent23 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Patrolling, Detection of Suspicious Person and Tracking of Illegal Vehicle (Controller Footage)</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/1.1+Drone+Patrolling%2C+Detection+of+Suspicious+Person+and+Tracking+of+Illegal+Vehicle+(Controller+Footage).mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent22 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Patrolling, Detection of Suspicious Person and Tracking of Illegal Vehicle</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/1.+Drone+Patrolling%2C+Detection+of+Suspicious+Person+and+Tracking+of+Illegal+Vehicle.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent21 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Drone Patrolling, Detection of Suspicious Person and Tracking of Illegal Vehicle (Controller Footage)</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/1.+Drone+Patrolling%2C+Detection+of+Suspicious+Person+and+Tracking+of+Illegal+Vehicle+(Controller+Footage).mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+       <ng-template #playercontent20 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Test Flights</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/0.+Test+Flights.mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+      <ng-template #playercontent19 let-modal >
+          <div class="player" style="position: absolute;left: 500px;background-color:white;">
+          <div class="modal-header">
+            <h6 class="modal-title">Test Flights (Controller Footage)</h6>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/night/0.+Test+Flights+(Controller+Footage).mp4"  width="500" height="270" frameborder="0" allowfullscreen></iframe>
+          </div>
+          </div>
+      </ng-template>
+   
+    <!-- Seperator between date -->
+    <ng-template #videocontent2 let-modal style="">
+      <div class="left" style="position: fixed;left: 74%;background-color:white;border-radius: 0px;">
+      <div class="modal-header" style="padding:5px;">
+        <h6 class="modal-title" style="text-align:center;">     Ended Stream</h6>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')" style="outline:none;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <tabset>
+        <tab heading="Night Surveilance">
+      <div class="modal-body" style="max-width: 280px; max-height:340px; 
+      overflow-y: auto;" >
+        
+          <button style="width:216px; margin:5px; background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg20(playercontent20)">Test Flights</button>
+        
+          
+          <br>
+          
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg21(playercontent21)">Drone Patrolling, Detection of Suspicious Person and Tracking of Illegal Vehicle (Controller Footage)</button>
+        
+          
+          <br>
+          
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg22(playercontent22)">Drone Patrolling, Detection of Suspicious Person and Tracking of Illegal Vehicle</button>
+        
+            <br>
+            <button style="width:216px;margin:5px;background-color:#949697;
+            border: 1px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+            color: white;" (click)="openLg23(playercontent23)">Drone Patrolling, Detection of Suspicious Person and Tracking of Illegal Vehicle (Controller Footage)</button>
+          
+          <br> <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg24(playercontent24)">Drone Patrolling, Detection of Suspicious Person and Tracking of Illegal Vehicle</button>
+        
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+            border: 1px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+            color: white;" (click)="openLg25(playercontent25)">Drone Patrolling and Detection of Suspicious Vehicle (Controller Footage 1)</button>
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+            border: 1px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+            color: white;" (click)="openLg26(playercontent26)">Drone Patrolling and Detection of Suspicious Vehicle</button>
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+            border: 1px;
+            padding: 10px;
+            box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+            color: white;" (click)="openLg27(playercontent27)">Drone Patrolling and Detection of Suspicious Person & Vehicle (Controller Footage)</button>
+          <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg28(playercontent28)">Drone Patrolling and Detection of Suspicious Person & Vehicle</button>
+        
+        <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg29(playercontent29)">Drone Live Monitoring of Company Vehicle (Controller Footage)</button>
+          <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg30(playercontent30)">Drone Live Monitoring of Company Vehicle</button>
+          <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg31(playercontent31)">Drone Live Monitoring of Tarmac Area</button>
+          <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg32(playercontent32)">Drone Security Surveillance of Wood Storage Area (Controller Footage)</button>
+          <br>
+          <button style="width:216px;margin:5px;background-color:#949697;
+          border: 1px;
+          padding: 10px;
+          box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+          color: white;" (click)="openLg33(playercontent33)">Drone Security Surveillance of Wood Storage Area</button>
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+        border: 1px;
+        padding: 10px;
+        box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+        color: white;" (click)="openLg34(playercontent34)">Drone Security Surveillance of Chemical Waste Area (Controller Footage)</button>
+      <br>
+      <button style="width:216px;margin:5px;background-color:#949697;
+      border: 1px;
+      padding: 10px;
+      box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+      color: white;" (click)="openLg35(playercontent35)">Drone Security Surveillance of Chemical Waste Area</button>
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+        border: 1px;
+        padding: 10px;
+        box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+        color: white;" (click)="openLg36(playercontent36)">Drone Security Surveillance of Borders (Controller Footage)</button>
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+        border: 1px;
+        padding: 10px;
+        box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+        color: white;" (click)="openLg37(playercontent37)">Drone Security Surveillance of Borders</button>
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+        border: 1px;
+        padding: 10px;
+        box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+        color: white;" (click)="openLg38(playercontent38)">Automated Flight Night</button>
+        <br>
+        <button style="width:216px;margin:5px;background-color:#949697;
+        border: 1px;
+        padding: 10px;
+        box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.16);
+        color: white;" (click)="openLg39(playercontent39)">Automated Flight Path</button>
+        <br>
+        </div>
+        </tab>
+        </tabset>
+       </div>
+    </ng-template>
+    <ng-template #playercontent18 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Drone Surveillance of Chemical Waste</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/10.+Drone+Surveillance+of+Chemical+Waste.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent17 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Drone Surveillance of Chemical Waste (Controller Footage)</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/10.+Drone+Surveillance+of+Chemical+Waste+(Controller+Footage).mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent16 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Drone Surveillance of Borders</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/9.+Drone+Surveillance+of+Borders.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent15 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Drone Surveillance of Hazardous Area</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/8.+Drone+Surveillance+of+Hazardous+Area.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent14 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Drone Surveilance of Hazardous Area (Controller Footage)</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/8.+Drone+Surveilance+of+Hazardous+Area+(Controller+Footage).mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent13 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Thermal Security Surveillance of Wood Storage Area.</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/7.2+Thermal+Security+Surveillance+of+Wood+Storage+Area.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent12 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Visual Security Surveillance of Wood Storage Area</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/7.1+Visual+Security+Surveillance+of+Wood+Storage+Area.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent11 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Non Company Vehicle Tracking with Plate No Identific</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/6.+Non+Company+Vehicle+Tracking+with+Plate+No+Identification.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent10 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Non Company Vehicle Tracking with Plate No Identific</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/6.+Non+Company+Vehicle+Tracking+with+Plate+No+Identification+(Controller+Footage).mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent9 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Beeah Company Vehicle Tracking</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/5.+Construction+Site+Monitoring.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent8 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Beeah Employee Tracking</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/4.+Beeah+Employee+Tracking.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent7 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Beeah Employee Tracking (Controller Footage)</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/4.+Beeah+Employee+Tracking+(Controller+Footage).mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent6 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Beeah Company Vehicle Tracking</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/3.+Beeah+Company+Vehicle+Tracking.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent5 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Beeah Company Vehicle Tracking (Controller Footage)</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/3.+Beeah+Company+Vehicle+Tracking+(Controller+Footage).mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    
+    <ng-template #playercontent4 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Drone Fire Incident Detection and Monitoring</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/2.+Drone+Fire+Incident+Detection+and+Monitoring.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    <ng-template #playercontent3 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Drone Fire Incident Detection and Monitoring (Controller Footage)</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/2.+Drone+Fire+Incident+Detection+and+Monitoring+(Controller+Footage)+copy.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+        </div>
+    </ng-template>
+    
+    <ng-template #playercontent let-modal >
+      <div class="player" style="position: absolute;left: 500px;background-color:white;">
+      <div class="modal-header">
+        <h6 class="modal-title">Drone Patrolling for Fire Detection</h6>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/1.+Drone+Patrolling+for+Fire+Detection.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+      </div>
+     
+      </div>
+    </ng-template>
+    <ng-template #playercontent2 let-modal >
+        <div class="player" style="position: absolute;left: 500px;background-color:white;">
+        <div class="modal-header">
+          <h6 class="modal-title">Drone Patrolling for Fire Detection(Controller)</h6>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <iframe src="https://aerodyne-evoteq.s3.me-south-1.amazonaws.com/live/evoteq/processed/1.+Drone+Patrolling+for+Fire+Detection+(Controller+Footage)+copy.mp4" width="500" height="270" frameborder="0" allowfullscreen></iframe>
+        </div>
+       
+        </div>
+      </ng-template>
+
+  <div class="timeline timeline-width" [style.width.px]="_timelineWrapperWidth">
+
+
+    <!-- [style.width.px]="_timelineWrapperWidth" -->
+    <div class="events-wrapper">
+      
+      <div class="events" #eventsWrapper [style.width.px]="eventsWrapperWidth">
+        <span class="filling-line" aria-hidden="true" #fillingLine></span>
+        <ol class="events-wrapper-list">
+          <li *ngFor="let item of timelineElements; let index = index">
+            <a #timelineEvents [ngClass]="{'selected': item.selected, 'older-event': index < selectedIndex}"
+            (click)="openSm(videocontent)">{{item.date | date: 'dd/MM'}}</a>
+          </li>
+          
+        </ol>
+      </div>
+    </div>
+    
+    <ul class="cd-timeline-navigation">
+
+      <li>
+        <a href="#" (click)="onScrollClick($event, false)" class="prev"
+          [ngClass]="{'inactive':prevLinkInactive}">Prev</a>
+      </li>
+      <li>
+        <a href="#" (click)="onScrollClick($event, true)" class="next"
+          [ngClass]="{'inactive':nextLinkInactive}">Next</a>
+      </li>
+    </ul>
+
+    
+  </div>
+</section>

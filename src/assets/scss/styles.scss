@@ -1,0 +1,24 @@
+/*
+Template Name: Admin Template
+Author: Niravjoshi / Wrappixel
+File: scss
+*/
+
+//(fonts)
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800');
+
+// Import Bootstrap source files (Required file)
+@import "~bootstrap/scss/bootstrap";
+
+//(Required file)
+@import 'variable';
+
+//In This scss you can write your scss
+@import 'custom'; 
+@import 'marker';
+@import 'icons';
+@import 'toolbar';
+
+//Pages (Required file)
+@import 'pages/auth'; 
+@import 'pages/home'; 

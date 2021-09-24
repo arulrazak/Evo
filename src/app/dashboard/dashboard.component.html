@@ -1,0 +1,52 @@
+<agm-map #map [zoom]="zoom" [maxZoom]="15" [styles]="lightRustMapStyle" [fitBounds]="true" [disableDefaultUI]='false' >
+  <agm-marker *ngFor="let item of liveMarker" [latitude]="item.lat" [longitude]="item.lng" [animation]="'DROP'"
+    [agmFitBounds]="true" [iconUrl]="'assets/icons/pin.svg'" (mouseOver)="onMouseOver(infoWindow, map)" (click)="onClickMarker(infoWindow)">
+
+    <agm-info-window [disableAutoPan]="false" #infoWindow>
+      <div class="marker" style="font-family:Nunito Sans, Helvetica Neue, sans-serif;">
+        <div class="marker-header">
+          <h6 class="marker-title"><b>{{item.name}}</b></h6>
+          <p class="marker-address">{{item.address}}</p>
+        </div>
+        <div class="marker-body marker-split">
+          <p><b style="font-weight: 700;">Pilot</b> <br>Nikin Mohan James</p>
+          <p><b style="font-weight: 700;">Contact</b> <br>+971 50 350 6893</p>
+        </div>
+        <!-- <span type="button" class="btn btn-outline-secondary btn-sm rounded-pill"> {{item.feed}} feed(s)</span> -->
+        <div class="marker-image">
+          <img src="assets/images/beeahsite.png" class="card-img" alt="image" height="200">
+        </div>
+        <span class="marker-link d-block text-right" (click)="openModal(template, map)">Enter <i class="icon icon-log-in"></i></span>
+      </div>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>
+
+
+<ng-template #template>
+  
+  <div  class="modal-content" style="flex-direction: row-reverse;">
+  <div class="modal-body p-0" style="display:flex;">
+    <!-- <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button> -->
+    <!-- <div id="playerDiv" class="" style="margin:0 auto;"></div> -->
+    <iframe src="https://beeah-player.vertikaliti.com" width="1250" height="700" allowfullscreen></iframe>
+    <div class="card-body" style="width: 250px;">
+
+      <h1>Live Details</h1>
+      <p>Pilot contacts : +971 50 350 6893</p>
+      <p>Event</p>
+      <p>Locations</p>
+      <p>Start Time</p>
+    </div>
+
+
+  </div>
+</div>
+
+</ng-template>
+
+<aerodyne-horizontal-timeline class="timeline-possition" [timelineElements]="timeline" [showContent]="true"></aerodyne-horizontal-timeline>
+
+<aerodyne-tool-bar class="toolbar-possition" style="z-index:-2;"></aerodyne-tool-bar>

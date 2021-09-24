@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bee'ah Waste Management</title>
+  <base href="/">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
+
+  <link rel="icon" type="image/x-icon" href="assets/icons/BeeahIcon.png">
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+
+  <meta name="theme-color" content="#1976d2">
+  <script type="text/JavaScript" src="//demo.nanocosmos.de/nanoplayer/api/release/nanoplayer.3.min.js"></script>
+  <script type="text/JavaScript">
+  var player;
+  var config = {
+      "source": {
+          "h5live": {
+              "server": {
+                  "websocket": "wss://h5live.nanocosmos.de:443/h5live/stream",
+                  "hls": "https://h5live.nanocosmos.de:443/h5live/http/playlist.m3u8",
+                  "progressive": "https://h5live.nanocosmos.de:443/h5live/http/stream.mp4"
+              },
+              "rtmp": {
+                  "url": "rtmp://bintu-play.nanocosmos.de:1935/play",
+                  "streamname": "QNVzE-k6CcZ"
+              },
+              "token": "%7B%22type%22:%22token1%22,%22key%22:%22013711429e44d381%22"
+          }
+      },
+      "playback": {
+          "autoplay": true,
+          "muted": false,
+          "flashplayer": "//demo.nanocosmos.de/nanoplayer/nano.player.swf"
+      }
+  };
+  function initPlayer() {
+        player = new NanoPlayer('playerDiv');
+        player.setup(config).then(function (config) {
+            // console.log('setup ok with config: ' + JSON.stringify(config)));
+        }, function (error) {
+            console.log(error);
+        }); 
+    }
+    // load player from playerDiv
+    document.addEventListener('DOMContentLoaded', function () {
+       setTimeout(() => {
+        initPlayer();
+       }, 2000);  
+    });
+
+//  function initPlayer(){
+//     player = new NanoPlayer("playerDiv");
+//     player.setup(config).then(function (config) {
+//         console.log("setup success");
+//         console.log("config: " + JSON.stringify(config, undefined, 4));
+//     }, function (error) {
+//         alert(error.message);
+//     });
+// }
+ 
+// document.addEventListener('DOMContentLoaded', function () { // initPlayer();
+// });
+</script>
+</head>
+<body>
+  <aerodyne-root></aerodyne-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+</body>
+</html>

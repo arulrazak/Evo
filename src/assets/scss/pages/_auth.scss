@@ -1,0 +1,90 @@
+.auth-form {
+  padding: 20px;
+  background: #ffffff;
+  height: 100vh;
+  position: relative;
+
+  .nav-pills {
+    font-size: 14px;
+    margin: 0 auto 30px;
+    justify-content: space-between;
+
+    .nav-item {
+      width: 40%;
+      text-align: center;
+    }
+
+    .nav-link {
+      color: $theme-gray;
+
+      &.active {
+        background-color: $theme-gray;
+        background-color: $theme-gray;
+        color: $white;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 20px;
+    }
+  }
+
+  a {
+    color: $theme-gray;
+  }
+
+  .form-control {
+    outline: none;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 40px;
+    max-width: 540px;
+    padding-top: 20px;
+    margin-left: auto;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 70px;
+    padding-top: 20px;
+  }
+  .form-check-input:checked{
+    border-color: $themecolor;
+    background-color: $themecolor;
+  }
+  .form-check-input:focus{
+    box-shadow: 0 0 0 0.2rem rgba($themecolor, 0.25);
+  }
+}
+
+.auth-logo {
+  width: 240px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  display: block;
+  @include media-breakpoint-up(md) {
+    width: 260px;
+    margin: 50px 50px 0;
+  }
+}
+
+.auth-container {
+  background-image: url('../../images/2445_1_1280-0-0_.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: $themecolor;
+}
+
+.aerodyne-footer {
+  text-align: center;
+  color: black;
+  position: absolute;
+  margin: 0 auto;
+  left: 0;
+  bottom: 0;
+  font-size: 12px;
+  right: 0;
+  background-color: white;
+  padding-top: 15px;
+}

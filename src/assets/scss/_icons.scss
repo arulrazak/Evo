@@ -1,0 +1,302 @@
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ii2znt');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ii2znt#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ii2znt') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ii2znt') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ii2znt##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-alert-triangle {
+  &:before {
+    content: $icon-alert-triangle; 
+  }
+}
+.icon-circle {
+  &:before {
+    content: $icon-circle; 
+  }
+}
+.icon-edit {
+  &:before {
+    content: $icon-edit; 
+  }
+}
+.icon-globe {
+  &:before {
+    content: $icon-globe; 
+  }
+}
+.icon-hexagon {
+  &:before {
+    content: $icon-hexagon; 
+  }
+}
+.icon-home {
+  &:before {
+    content: $icon-home; 
+  }
+}
+.icon-info1 {
+  &:before {
+    content: $icon-info1; 
+  }
+}
+.icon-link-2 {
+  &:before {
+    content: $icon-link-2; 
+  }
+}
+.icon-lock {
+  &:before {
+    content: $icon-lock; 
+  }
+}
+.icon-log-in {
+  &:before {
+    content: $icon-log-in; 
+  }
+}
+.icon-log-out {
+  &:before {
+    content: $icon-log-out; 
+  }
+}
+.icon-map-pin {
+  &:before {
+    content: $icon-map-pin; 
+  }
+}
+.icon-maximize {
+  &:before {
+    content: $icon-maximize; 
+  }
+}
+.icon-maximize-2 {
+  &:before {
+    content: $icon-maximize-2; 
+  }
+}
+.icon-minimize {
+  &:before {
+    content: $icon-minimize; 
+  }
+}
+.icon-minimize-2 {
+  &:before {
+    content: $icon-minimize-2; 
+  }
+}
+.icon-more-vertical {
+  &:before {
+    content: $icon-more-vertical; 
+  }
+}
+.icon-mouse-pointer {
+  &:before {
+    content: $icon-mouse-pointer; 
+  }
+}
+.icon-move {
+  &:before {
+    content: $icon-move; 
+  }
+}
+.icon-octagon {
+  &:before {
+    content: $icon-octagon; 
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus; 
+  }
+}
+.icon-radio {
+  &:before {
+    content: $icon-radio; 
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search; 
+  }
+}
+.icon-shield {
+  &:before {
+    content: $icon-shield; 
+  }
+}
+.icon-square {
+  &:before {
+    content: $icon-square; 
+  }
+}
+.icon-terminal {
+  &:before {
+    content: $icon-terminal; 
+  }
+}
+.icon-trash-2 {
+  &:before {
+    content: $icon-trash-2; 
+  }
+}
+.icon-unlock {
+  &:before {
+    content: $icon-unlock; 
+  }
+}
+.icon-user {
+  &:before {
+    content: $icon-user; 
+  }
+}
+.icon-live {
+  &:before {
+    content: $icon-live; 
+  }
+}
+.icon-share {
+  &:before {
+    content: $icon-share;     
+    color: #4f4f4f;
+  }
+}
+.icon-chart {
+  &:before {
+    content: $icon-chart;     
+    color: #4f4f4f;
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close; 
+  }
+}
+.icon-drag {
+  &:before {
+    content: $icon-drag; 
+  }
+}
+.icon-info {
+  &:before {
+    content: $icon-info;     
+    color: #4f4f4f;
+  }
+}
+.icon-measure {
+  &:before {
+    content: $icon-measure;     
+    color: #4f4f4f;
+  }
+}
+.icon-Icon_pin {
+  &:before {
+    content: $icon-Icon_pin;     
+    color: #4f4f4f;
+  }
+}
+.icon-satelite .path1 {
+  &:before {
+    content: $icon-satelite-path1;  
+    color: rgb(79, 79, 79);
+  }
+}
+.icon-satelite .path2 {
+  &:before {
+    content: $icon-satelite-path2;  
+    margin-left: -1em;  
+    color: rgb(0, 0, 0);
+  }
+}
+.icon-satelite .path3 {
+  &:before {
+    content: $icon-satelite-path3;  
+    margin-left: -1em;  
+    color: rgb(0, 0, 0);
+  }
+}
+.icon-select .path1 {
+  &:before {
+    content: $icon-select-path1;  
+    color: rgb(79, 79, 79);
+  }
+}
+.icon-select .path2 {
+  &:before {
+    content: $icon-select-path2;  
+    margin-left: -1em;  
+    color: rgb(69, 90, 100);
+  }
+}
+.icon-select .path3 {
+  &:before {
+    content: $icon-select-path3;  
+    margin-left: -1em;  
+    color: rgb(69, 90, 100);
+  }
+}
+.icon-select .path4 {
+  &:before {
+    content: $icon-select-path4;  
+    margin-left: -1em;  
+    color: rgb(69, 90, 100);
+  }
+}
+.icon-select .path5 {
+  &:before {
+    content: $icon-select-path5;  
+    margin-left: -1em;  
+    color: rgb(69, 90, 100);
+  }
+}
+.icon-select .path6 {
+  &:before {
+    content: $icon-select-path6;  
+    margin-left: -1em;  
+    color: rgb(69, 90, 100);
+  }
+}
+.icon-select .path7 {
+  &:before {
+    content: $icon-select-path7;  
+    margin-left: -1em;  
+    color: rgb(69, 90, 100);
+  }
+}
+.icon-text {
+  &:before {
+    content: $icon-text;     
+    color: #4f4f4f;
+  }
+}
+.icon-virus {
+  &:before {
+    content: $icon-virus;     
+    color: #4f4f4f;
+  }
+}
+.icon-login {
+  &:before {
+    content: $icon-login; 
+  }
+}

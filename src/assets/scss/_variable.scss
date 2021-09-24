@@ -1,0 +1,241 @@
+/*******************************/
+// Custom Variables
+/*******************************/
+
+/*Theme Colors*/
+
+$themecolor: #2fb64c;
+$themecolor-dark: #13a713;
+$black: #000000 !default;
+$white: #ffffff !default;
+$theme-gray: #4F4F4F;
+
+/*Shadow*/
+
+$shadow:1px 0px 20px rgba(0, 0, 0, 0.08);
+
+/*transitions*/
+
+$transitions:0.2s ease-in;
+
+/*******************************/
+// Bootstrap overrides
+/*******************************/
+
+/**
+ * Table Of Content
+ *
+ *  1. Color system
+ *  2. Options
+ *  3. Body
+ *  4. Typography
+ *  5. Breadcrumbs
+ *  6. Cards
+ *  7. Dropdowns
+ *  8. Buttons
+ *  9. Typography
+ *  10. Progress bars
+ *  11. Tables
+ *  12. Forms
+ *  14. Component
+ */
+
+//
+// Color system
+//
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #a1aab2 !default;
+$gray-600: #6c757d !default;
+$gray-700: #4F5467 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$blue: #2962FF !default;
+$indigo: #6610f2 !default;
+$purple: #7460ee !default;
+$pink: #e83e8c !default;
+$red: #f62d51 !default;
+$orange: #fb8c00 !default;
+$yellow: #ffbc34 !default;
+$green: #36bea6 !default;
+$teal: #20c997 !default;
+$cyan: #4fc3f7 !default;
+$primary: #7460ee !default;
+$text-muted: $gray-500 !default;
+
+$colors: ( blue: $blue,
+indigo: $indigo,
+purple: $purple,
+pink: $pink,
+red: $red,
+orange: $orange,
+yellow: $yellow,
+green: $green,
+teal: $teal,
+cyan: $cyan,
+white: $white,
+gray: $gray-600,
+gray-dark: $gray-800);
+
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $blue !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+$cyan: $cyan !default;
+$orange: $orange !default;
+$themecolors: () !default;
+$themecolors: map-merge(( "primary": $primary,
+"secondary": $secondary,
+"success": $success,
+"info": $info,
+"warning": $warning,
+"danger": $danger,
+"light": $light,
+"dark": $dark,
+"cyan": $cyan,
+"orange": $orange,
+"purple": $purple),
+$themecolors);
+
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-hover-media-query: false !default;
+$enable-grid-classes: true !default;
+$enable-print-styles: true !default;
+
+// Body
+//
+// Settings for the  element.
+
+$main-body-bg: #fff!default;
+$body-bg: #eef5f9;
+$body-color: #3e5569 !default;
+$grid-gutter-width: 20px !default;
+
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+
+
+$font-family: "Nunito Sans", "Helvetica Neue", sans-serif!default;
+$font-size-base: 0.875rem;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-medium: 600 !default; 
+$font-weight-bold: 800 !default;
+
+$h1-font-size: 36px !default;
+$h2-font-size: 30px !default;
+$h3-font-size: 24px !default;
+$h4-font-size: 18px !default;
+$h5-font-size: 16px !default;
+$h6-font-size: 14px !default;
+
+$headings-margin-bottom: (1rem / 2) !default;
+$headings-font-weight: 700 !default;
+$headings-color: inherit !default;
+
+// Breadcrumbs
+
+$breadcrumb-bg: $body-bg;
+$breadcrumb-margin-bottom: 1.5rem;
+
+// Cards
+
+$card-border-width: 0px!default;
+$card-border-color: transparent!default;
+$card-border-radius: 0px !default;
+
+// Dropdowns
+
+$dropdown-item-padding-x: 1rem !default;
+$dropdown-item-padding-y: .65rem !default;
+$dropdown-border-color: $gray-200;
+$dropdown-divider-bg: $gray-100;
+
+// Buttons
+
+$btn-secondary-border: $gray-300;
+
+// Progress bars
+
+$progress-bg: $gray-100;
+
+//
+// Define common padding and border radius sizes and more.
+
+$border-width: 1px !default;
+$border-color: $gray-200 !default;
+$border-radius: 2px !default;
+$border-radius-lg: 2px !default;
+$border-radius-sm: 1px !default;
+
+
+// fonts
+$icomoon-font-family: "aerodyne-icon-font" !default;
+$icomoon-font-path: "../fonts" !default;
+
+$icon-alert-triangle: "\e902";
+$icon-circle: "\e903";
+$icon-edit: "\e904";
+$icon-globe: "\e90c";
+$icon-hexagon: "\e90d";
+$icon-home: "\e90e";
+$icon-info1: "\e912";
+$icon-link-2: "\e91b";
+$icon-lock: "\e91d";
+$icon-log-in: "\e91e";
+$icon-log-out: "\e91f";
+$icon-map-pin: "\e920";
+$icon-maximize: "\e921";
+$icon-maximize-2: "\e922";
+$icon-minimize: "\e923";
+$icon-minimize-2: "\e924";
+$icon-more-vertical: "\e925";
+$icon-mouse-pointer: "\e926";
+$icon-move: "\e927";
+$icon-octagon: "\e928";
+$icon-plus: "\e929";
+$icon-radio: "\e92a";
+$icon-search: "\e92b";
+$icon-shield: "\e92c";
+$icon-square: "\e92d";
+$icon-terminal: "\e92e";
+$icon-trash-2: "\e92f";
+$icon-unlock: "\e930";
+$icon-user: "\e931";
+$icon-live: "\e901";
+$icon-share: "\e905";
+$icon-chart: "\e906";
+$icon-close: "\e907";
+$icon-drag: "\e908";
+$icon-info: "\e909";
+$icon-measure: "\e90a";
+$icon-Icon_pin: "\e90b";
+$icon-satelite-path1: "\e90f";
+$icon-satelite-path2: "\e910";
+$icon-satelite-path3: "\e911";
+$icon-select-path1: "\e913";
+$icon-select-path2: "\e914";
+$icon-select-path3: "\e915";
+$icon-select-path4: "\e916";
+$icon-select-path5: "\e917";
+$icon-select-path6: "\e918";
+$icon-select-path7: "\e919";
+$icon-text: "\e91a";
+$icon-virus: "\e91c";
+$icon-login: "\e900";
